@@ -10,14 +10,14 @@
 
 .ContainerM {
     display: flex;
-   
     flex-wrap: wrap;
-    flex-direction: row;
+    
 }
 
 .top {
     height: 100px;
     background-color: brown;
+    flex-basis: 100%;
     
 }
 
