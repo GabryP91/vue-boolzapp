@@ -5,50 +5,175 @@
     box-sizing: border-box;
 }
 
+.container-fluid {
+    padding: 0;
+}
+
+.fa-solid {
+    color: gray;
+}
+
 
 /* MAIN */
 
-.ContainerM {
+
+
+.header {
+    height: 100px;
+    background-color: rgb(0, 150, 136);
+    width: 100%;
+}
+
+
+.containerBox {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row
+}
+
+.vert1 {
+    height: 100%;
+    background-color: lightslategray;
+    overflow-y: auto;
+    height: calc(100vh - 80px);
+    flex-basis: 30%;
+}
+
+.Cent {
+    overflow-y: auto;
+    height: calc(100vh - 50px);
+    flex-basis: 70%;
+}
+
+.Cent1 {
+    height: 100%;
+    background-image: url("../img-recap/ImgBackground.png");
+    overflow-y: auto;
+    height: calc(100vh - 130px);
     
 }
 
-.top {
-    height: 100px;
-    background-color: brown;
-    flex-basis: 100%;
+/* CoNTAINER containerBox:top */
+.top{
+    height: 80px;
+    display: flex;
+}
+
+.top .topS {
+    background-color: lightgray;
+    flex-basis: 30%;
     
 }
 
-.UserList {
-    height: 100vh;
-    background-color: blueviolet;
-    overflow-y: auto;
-    flex-basis: 20%;
+.top .topS .ImgName {
+    width: 190px;
+    margin: 5px 0px 0px 5px;
+}
+
+.top .topS .ImgName .avatar {
+    width: 35%;
+    border-radius: 50px;
+  
+}
+
+.top .topS .ImgName .name {
+    color: red;
+    margin-left: 10px;
+}
+
+.top .topS .Icon {
+    margin: -55px 0px 0px 270px;
+    font-size: 25px;
+}
+
+.top .topS .Icon .fa-solid {
+    margin-left: 10px;
+}
+
+.top .topD {
+    background-color: lightgray;
+    flex-basis: 70%;
+    border-left: 1px solid lightslategray;
+}
+
+.top .topD .ImgName {
+    width: 190px;
+    margin: 5px 0px 0px 5px;
+}
+
+.top .topD .ImgName .avatar {
+    width: 35%;
+    border-radius: 50px;
+  
+}
+
+.top .topD .ImgName .name {
+    color: red;
+    margin-left: 10px;
+}
+
+.top .topD .Icon {
+    text-align: right;
+    margin-top: -60px;
+    padding: 10px;
+    font-size: 25px;
 }
 
 
-.TextButton{
-    flex-basis: 80%;
-}
-
-.prova{
-    background-color: pink;
-    overflow-y: auto;
-    padding: 50px;
-    height: calc(100vh - 200px);
-}
-
+/* CoNTAINER containerBox:CENT:CENT1:botton */
 .botton {
-    height: 100px;
-    background-color: green;
-   
-    z-index: 1;
+    height: 50px;
+    background-color: rgb(243, 238, 234);
+    padding: 7px;
 }
+
+.botton .fa-solid  {
+    font-size: 25px;
+}
+
+
 
 .box {
-    text-align: right;
-    background-color: red;
-    height: 200px;
+    text-align: center;
+    height: 100px;
+    background-color: coral;
+    border: 5px;
+    border-radius: 30px;
+    
+}
+
+
+
+
+
+
+/* PARTE RESPONSIVE */
+/* Versione tablet-desktop in giu */
+@media screen and (max-width: 1400px) {
+
+    .top .topS .Icon {
+        margin: -55px 0px 0px 220px;
+    }
+    
+}
+
+@media screen and (max-width: 1200px) {
+
+    .top .topS .Icon {
+        margin: -55px 0px 0px 170px;
+    }
+    
+}
+
+@media screen and (max-width: 1000px) {
+
+    .top .topS .Icon {
+        margin: -55px 0px 0px 145px;
+        font-size: 18px;
+    }
+
+    .top .topS .Icon .fa-solid {
+        margin-left: 2px;
+    }
+    
 }
