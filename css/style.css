@@ -134,18 +134,16 @@
 .boxU {
     text-align: center;
     background-color: rgb(213, 249, 186);
-    max-width: 300px;
     word-wrap: break-word;    
     border: 5px;
     border-radius: 30px;
     padding: 10px;
-    margin-left: 5%;
+    margin-right: 70%;
 }
 
 .boxC {
     text-align: center;
     background-color: white;
-    max-width: 300px;
     word-wrap: break-word;    
     border: 5px;
     border-radius: 30px;
