@@ -46,7 +46,6 @@
 }
 
 .Cent1 {
-    height: 100%;
     background-image: url("../img-recap/ImgBackground.png");
     overflow-y: auto;
     height: calc(100vh - 130px);
@@ -132,15 +131,29 @@
 }
 
 
-
-.box {
+.boxU {
     text-align: center;
-    height: 100px;
-    background-color: coral;
+    background-color: rgb(213, 249, 186);
+    max-width: 300px;
+    word-wrap: break-word;    
     border: 5px;
     border-radius: 30px;
-    
+    padding: 10px;
+    margin-left: 5%;
 }
+
+.boxC {
+    text-align: center;
+    background-color: white;
+    max-width: 300px;
+    word-wrap: break-word;    
+    border: 5px;
+    border-radius: 30px;
+    padding: 10px;
+    margin-left: 70%;
+}
+
+
 
 
 
@@ -151,6 +164,7 @@
 /* Versione tablet-desktop in giu */
 @media screen and (max-width: 1400px) {
 
+    /* TOP:TOps, icone */
     .top .topS .Icon {
         margin: -55px 0px 0px 220px;
     }
@@ -159,6 +173,7 @@
 
 @media screen and (max-width: 1200px) {
 
+    /* TOP:TOps, icone */
     .top .topS .Icon {
         margin: -55px 0px 0px 170px;
     }
@@ -167,11 +182,13 @@
 
 @media screen and (max-width: 1000px) {
 
+    /* TOP:TOps, icone */
     .top .topS .Icon {
         margin: -55px 0px 0px 145px;
         font-size: 18px;
     }
 
+    /* TOP:TOps, icone */
     .top .topS .Icon .fa-solid {
         margin-left: 2px;
     }
