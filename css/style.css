@@ -113,24 +113,12 @@
 
 .top .topD .Icon {
     text-align: right;
-    margin-top: -60px;
+    margin-top: -65px;
     padding: 10px;
     font-size: 25px;
 }
 
-
-/* CoNTAINER containerBox:CENT:CENT1:botton */
-.botton {
-    height: 50px;
-    background-color: rgb(243, 238, 234);
-    padding: 7px;
-}
-
-.botton .fa-solid  {
-    font-size: 25px;
-}
-
-
+/* CoNTAINER containerBox:CENT:CENT1*/
 .boxU {
     text-align: center;
     background-color: rgb(213, 249, 186);
@@ -150,6 +138,20 @@
     padding: 10px;
     margin-left: 70%;
 }
+
+/* CoNTAINER containerBox:CENT:CENT1:botton */
+.botton {
+    height: 50px;
+    background-color: rgb(243, 238, 234);
+    padding: 7px;
+}
+
+.botton .fa-solid  {
+    font-size: 25px;
+}
+
+
+
 
 
 
