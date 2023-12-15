@@ -35,6 +35,21 @@ createApp({
                             date: '10/01/2020 16:15:22',
                             message: 'Tutto fatto!',
                             status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Fai attenzione anche ai romani',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Ricordati di innaffiare le piante ogni tanto.....',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 16:15:22',
+                            message: 'Tutto fatto come prima =)',
+                            status: 'received'
                         }
                     ],
                 },
