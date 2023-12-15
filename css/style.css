@@ -31,25 +31,42 @@
     flex-direction: row
 }
 
-.vert1 {
-    height: 100%;
+
+/* CoNTAINER containerBox:ContactUser */
+.ContactUser {
     background-color: lightslategray;
     overflow-y: auto;
     height: calc(100vh - 80px);
     flex-basis: 30%;
 }
 
-.Cent {
-    overflow-y: auto;
-    height: calc(100vh - 50px);
-    flex-basis: 70%;
+.ContactUser .row .col-12 {
+    background-color: green;
 }
 
-.Cent1 {
-    background-image: url("../img-recap/ImgBackground.png");
-    overflow-y: auto;
-    height: calc(100vh - 130px);
-    
+.ContactUser .row .col-12:hover {
+    background-color: red;
+}
+
+
+.ContactUser .ImgName{
+    width: 150px;
+    margin: 5px 0px 0px 5px;
+}
+
+.ContactUser .ImgName .avatar {
+    width: 35%;
+    border-radius: 50px;
+  
+}
+
+.ConAvUs {
+    text-align: center;
+    background-color: white;
+    word-wrap: break-word;    
+    border: 5px;
+    border-radius: 30px;
+    padding: 10px;
 }
 
 /* CoNTAINER containerBox:top */
@@ -61,8 +78,16 @@
 .top .topS {
     background-color: lightgray;
     flex-basis: 30%;
-    
+    border-right: 1px solid lightslategray;
 }
+
+.top .topD {
+    background-color: lightgray;
+    flex-basis: 70%;
+    border-left: 1px solid lightslategray;
+}
+
+/* CoNTAINER containerBox:top,topS */
 
 .top .topS .ImgName {
     width: 190px;
@@ -89,11 +114,7 @@
     margin-left: 10px;
 }
 
-.top .topD {
-    background-color: lightgray;
-    flex-basis: 70%;
-    border-left: 1px solid lightslategray;
-}
+/* CoNTAINER containerBox:top,topD */
 
 .top .topD .ImgName {
     width: 190px;
@@ -119,6 +140,20 @@
 }
 
 /* CoNTAINER containerBox:CENT:CENT1*/
+
+.Cent {
+    overflow-y: auto;
+    height: calc(100vh - 50px);
+    flex-basis: 70%;
+}
+
+.Cent1 {
+    background-image: url("../img-recap/ImgBackground.png");
+    overflow-y: auto;
+    height: calc(100vh - 130px);
+    
+}
+
 .boxU {
     text-align: center;
     background-color: rgb(213, 249, 186);
