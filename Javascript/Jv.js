@@ -28,7 +28,7 @@ createApp({
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Ricordati di stendere i panni',
+                            message: 'Ricordati di scacciare i Burgundi e dare una mano ogni tanto agli Edui.....',
                             status: 'sent'
                         },
                         {
