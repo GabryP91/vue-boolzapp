@@ -211,8 +211,6 @@ body {
 /* CoNTAINER containerBox:CENT:CENT1*/
 
 .Cent {
-    overflow-y: auto;
-    height: calc(100vh - 50px);
     flex-basis: 70%;
 }
 
