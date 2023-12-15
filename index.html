@@ -25,16 +25,14 @@
     <div id="app">
 
             <!--container superiore  -->
-            <div class=" header">
-            
-            </div>
+            <div class=" header"></div>
 
        
                 <!-- Container Bootstrap tot -->
                 <div class="container containerBox">
 
                     <!-- Container Bootstrap top -->
-                    <div class="container-fluid  top">
+                    <div class="container-fluid top">
 
                         <!-- Container top Sinistro -->
                         <div class="topS">
@@ -48,7 +46,7 @@
                                 <i class="fa-solid fa-message"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
-                                
+
                         </div>
 
                         <!-- Container top Destro -->
@@ -56,9 +54,9 @@
 
                             <div class="ImgName">
                                 <img :src="contacts[activeAvatar].avatar" alt="avatarUser" class="avatar">
-                                 <h7 class="name">{{contacts[activeAvatar].name}}
+                                <h7 class="name">{{contacts[activeAvatar].name}}
                                     <br>ultimo accesso oggi alle <span class="time">12:00</span>
-                                 </h7>
+                                </h7>
                             </div>
 
                             <div class="Icon">
@@ -67,30 +65,70 @@
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
 
-                        
+                            
                         </div>
 
                     </div>
 
+               
+
                     <!-- Container lista contatti utente Bootstrap (ContactUser)  -->
-                    <div class="container-fluid ContactUser">
+                    <div class="container-fluid ContactUsers">
 
-                        <!-- niente margini interni (evita lo scroll orizzontale) -->
-                        <div class="row g-0"> 
+                        <!--Chat in alto a sinistra(Allert)-->
+                        <div class=" container-fluid Allert">
 
-                            <div class="col-12 p-3 " v-for="(user,i) in contacts" :key="i" @click = "changeCon(i)">
+                            <div class="ImgName">
+                                <i class="fa-solid fa-bell-slash"></i>
+                                <h7 class="name">Ricevi notifiche di nuovi messaggi</h7>
+                            </div>             
+                           
+                        </div> 
 
-                                <div class="ImgName">
-                                    <img :src="user.avatar" alt="Lista avatar i" class="avatar">
-                                     
-                                     <h7 class="name">
-                                        {{user.name}}<span class="time">12:00</span>
-                                        <br>ultimo messaggio inviato
-                                     </h7>
+                        <!--Chat in alto a sinistra(ricerca)-->
+                        <div class=" container-fluid shearc">
+                                           
+                            <!-- Form in container fluid-->
+                            <form class="container-md">
+
+                                <div class="input-group">
+
+                                    <!-- Icona microfono legata all'input (necessario sistemarla in questo modo) -->
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" >
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </span>
+                                    </div>
+
+                                    <!-- Tipo input text-->
+                                    <input class="form-control " type="text" placeholder="cerca o inizia una nuova chat" aria-label="Search">
+
                                 </div>
 
+                            </form>
+
+                        </div> 
+
+                        <div class="container-fluid ContactUser">
+
+                            <!-- niente margini interni (evita lo scroll orizzontale) -->
+                            <div class="row g-0"> 
+    
+                                <div class="col-12 p-3 " v-for="(user,i) in contacts" :key="i" @click = "changeCon(i)">
+    
+                                    <div class="ImgName">
+                                        <img :src="user.avatar" alt="Lista avatar i" class="avatar">
+                                         
+                                         <h7 class="name">
+                                            {{user.name}}<span class="time">12:00</span>
+                                            <br>ultimo messaggio inviato
+                                         </h7>
+                                    </div>
+    
+                                </div>
+                                
                             </div>
-                            
+
                         </div>
                     </div>
 
@@ -141,6 +179,7 @@
                                 </div>
 
                             </form>
+
                         </div>
 
                     </div>
