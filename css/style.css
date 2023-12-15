@@ -30,8 +30,6 @@ body {
 
 /* MAIN */
 
-
-
 .header {
     height: 100px;
     background-color: rgb(0, 150, 136);
@@ -50,14 +48,23 @@ body {
     max-height: 920px;
 }
 
-/*CoNTAINER containerBox:Shearc */ 
 
-
-/* CoNTAINER containerBox:ContactUsers,ContactUser */
+.Cent {
+    flex-basis: 70%;
+}
 
 .ContactUsers {
     flex-basis: 30%;
 }
+
+.top{
+    height: 80px;
+    display: flex;
+    background-color: lightgray;
+}
+
+
+/* CoNTAINER containerBox:ContactUsers,ContactUser */
 
 .ContactUsers .Allert {
     height: 60px;
@@ -137,11 +144,6 @@ body {
 }
 
 /* CoNTAINER containerBox:top */
-.top{
-    height: 80px;
-    display: flex;
-    background-color: lightgray;
-}
 
 .top .topS {
     flex-basis: 30%;
@@ -210,9 +212,7 @@ body {
 
 /* CoNTAINER containerBox:CENT:CENT1*/
 
-.Cent {
-    flex-basis: 70%;
-}
+
 
 .Cent1 {
     background-image: url("../img-recap/ImgBackground.png");
