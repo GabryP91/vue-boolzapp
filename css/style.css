@@ -34,30 +34,38 @@
 
 /* CoNTAINER containerBox:ContactUser */
 .ContactUser {
-    background-color: lightslategray;
+    
     overflow-y: auto;
     height: calc(100vh - 80px);
     flex-basis: 30%;
 }
 
-.ContactUser .row .col-12 {
-    background-color: green;
-}
 
 .ContactUser .row .col-12:hover {
-    background-color: red;
+    background-color: rgb(238, 238, 238);
 }
-
 
 .ContactUser .ImgName{
-    width: 150px;
     margin: 5px 0px 0px 5px;
+    position: relative;
+    border-bottom: 1px solid lightgray;
 }
 
+.ContactUser .ImgName .time {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.ContactUser .ImgName h7{
+    display: inline;
+}
+
+
 .ContactUser .ImgName .avatar {
-    width: 35%;
+    width: 15%;
     border-radius: 50px;
-  
+    vertical-align: middle;
 }
 
 .ConAvUs {
@@ -116,25 +124,24 @@
 
 /* CoNTAINER containerBox:top,topD */
 
-.top .topD .ImgName {
-    width: 190px;
-    margin: 5px 0px 0px 5px;
+.top .topD .ImgName { 
+    margin: 0px 0px 0px 5px;
 }
 
 .top .topD .ImgName .avatar {
-    width: 35%;
+    width: 7%;
     border-radius: 50px;
-  
+    margin: -15px 0px 0px 0px;
 }
 
 .top .topD .ImgName .name {
-    color: red;
-    margin-left: 10px;
+    margin: 10px 15px 0px 15px;
+    display: inline-block;
 }
 
 .top .topD .Icon {
     text-align: right;
-    margin-top: -65px;
+    margin-top: -55px;
     padding: 10px;
     font-size: 25px;
 }
