@@ -52,6 +52,10 @@
     border-bottom: 1px solid lightgray;
 }
 
+.ContactUser .ImgName .name{
+    margin-left: 10px;
+}
+
 .ContactUser .ImgName .time {
     position: absolute;
     top: 0;

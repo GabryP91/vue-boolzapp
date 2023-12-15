@@ -78,16 +78,19 @@
                         <!-- niente margini interni (evita lo scroll orizzontale) -->
                         <div class="row g-0"> 
 
-                            <div class="col-12 p-3 ">
+                            <div class="col-12 p-3 " v-for="(user,i) in contacts" :key="i" @click = "changeCon(i)">
+
                                 <div class="ImgName">
-                                    <img src="img-recap/avatar-esempi/avatar2.jpeg" alt="Lista avatar 1" class="avatar">
+                                    <img :src="user.avatar" alt="Lista avatar i" class="avatar">
+                                     
                                      <h7 class="name">
-                                        Vercy<span class="time">12:00</span>
+                                        {{user.name}}<span class="time">12:00</span>
                                         <br>ultimo messaggio inviato
                                      </h7>
                                 </div>
+
                             </div>
-                            <div class="col-12 p-3 ">
+                            <!-- <div class="col-12 p-3 " @click = "changeCon()">
                                 <div class="ImgName">
                                     <img src="img-recap/avatar-esempi/avatar3.jpg" alt="Lista avatar 2" class="avatar">
                                      <h7 class="name">
@@ -96,7 +99,7 @@
                                      </h7>
                                 </div>
                             </div>
-                            <div class="col-12 p-3 ">
+                            <div class="col-12 p-3 " @click = "changeCon()">
                                 <div class="ImgName">
                                     <img src="img-recap/avatar-esempi/avatar4.jpg" alt="Lista avatar 3" class="avatar">
                                      <h7 class="name">
@@ -105,7 +108,7 @@
                                      </h7>
                                 </div>
                             </div>
-                            <div class="col-12 p-3 ">
+                            <div class="col-12 p-3 " @click = "changeCon()">
                                 <div class="ImgName">
                                     <img src="img-recap/avatar-esempi/avatar5.jpg" alt="Lista avatar 4" class="avatar">
                                      <h7 class="name">
@@ -113,7 +116,7 @@
                                         <br>ultimo messaggio inviato
                                      </h7>
                                 </div>
-                            </div>   
+                            </div>    -->
                             
                             
                            
@@ -136,7 +139,7 @@
                                     <div class="boxC" v-else>
                                         <h5>{{text.message}}</h5>
                                     </div>
-                                    
+
                                 </div> 
                               
                             </div> 

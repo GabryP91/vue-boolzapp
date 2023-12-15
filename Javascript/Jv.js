@@ -18,7 +18,7 @@ createApp({
             contacts: [
                 {
                     name: 'Vercy',
-                    avatar: './img-recap/avatar-esempi/avatar2.jpeg',
+                    avatar: 'img-recap/avatar-esempi/avatar2.jpeg',
                     visible: true,
                     messages: [
                         {
@@ -55,22 +55,42 @@ createApp({
                 },
                 {
                     name: 'Jack',
-                    avatar: './img-recap/avatar-esempi/avatar5.jpg',
+                    avatar: 'img-recap/avatar-esempi/avatar5.jpg',
                     visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Hai portato a spasso il cane?',
+                            message: 'Troppa gente, qui dentro, è stata abbattuta come mosche.',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'E cosa hai ottenuto?',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 16:15:22',
+                            message: 'Dimmelo tu!',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Ricordati di stendere i panni',
-                            status: 'sent'
+                            message: 'Niente, e subito anche.',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Aahhh. Lo sai cosa dice il vecchio Jack Burton in situazioni come questa?',
+                            status: 'received'
                         },
                         {
                             date: '10/01/2020 16:15:22',
-                            message: 'Tutto fatto!',
+                            message: 'Chi?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Jack Burton, qui presente! Il vecchio Jack dice sempre… Basta adesso!',
                             status: 'received'
                         }
                     ],
@@ -81,7 +101,12 @@ createApp({
     },
     methods: {
         
-        
+        changeCon(index){
+            console.log(this.activeAvatar);
+
+            this.activeAvatar = index;
+
+        }
     },
 
     mounted() {
