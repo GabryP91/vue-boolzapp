@@ -94,6 +94,80 @@ createApp({
                             status: 'received'
                         }
                     ],
+                },
+                {
+                    name: 'Str Lincoln',
+                    avatar: 'img-recap/avatar-esempi/avatar4.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            message: 'Davvero volete abbandonare questo film? Ma che razza impossibile!!',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'A chi razza impossibile?',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Nella mia fattoria coltivo piombo!',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Io non leggo il copione, il copione legge me!',
+                            status: 'received'
+                        },
+                    ],
+                },
+                {
+                    name: 'Olmo',
+                    avatar: 'img-recap/avatar-esempi/avatar3.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            message: 'tua...tu tuaa... patatina mia',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: '(coro)shattuia',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'non titillare la mia fantasia',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Allora tu',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: '(coro)tu tua',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'rucolina mia la notte è buia, no, non andare via.',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: "Com'è bello il nostro amore, senti come sale,è bello solo se ci sei tuaaa, sotto questa luna dimmi cosa pensi di me.",
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Che sei una merda, io credo veramente tu sei merda.',
+                            status: 'sent'
+                        },
+                    ],
                 }
             ]
             
