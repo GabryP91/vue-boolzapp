@@ -55,8 +55,8 @@
                         <div class="topD">
 
                             <div class="ImgName">
-                                <img src="img-recap/avatar-esempi/avatar2.jpeg" alt="avatarUser" class="avatar">
-                                 <h7 class="name">Odoacre
+                                <img :src="contacts[activeAvatar].avatar" alt="avatarUser" class="avatar">
+                                 <h7 class="name">{{contacts[activeAvatar].name}}
                                     <br>ultimo accesso oggi alle <span class="time">12:00</span>
                                  </h7>
                             </div>
@@ -126,19 +126,19 @@
                         <!-- Container verticale Bootstrap Sub-Centrale  -->
                         <div class="container Cent1">
 
-                            <div class="row "> 
-                                <div class="col-11 p-2 m-2 ">
-                                    <div class="boxU">
-                                        <h5>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h5>
-                                    </div>
-                                </div> 
-                                <div class="col-11 p-2 m-2">
-                                    <div class="boxC">
-                                        <h5>bgggggggggggggggggggggggggggggggggggg</h5>
-                                    </div>
-                                </div> 
+                            <div class="row ">
                                 
-                                 
+                                <div v-for="text in contacts[activeAvatar].messages" class="col-11 p-2 m-2" >
+
+                                    <div class="boxU" v-if ="text.status ==='sent' ">
+                                        <h5>{{text.message}}</h5>
+                                    </div>
+                                    <div class="boxC" v-else>
+                                        <h5>{{text.message}}</h5>
+                                    </div>
+                                    
+                                </div> 
+                              
                             </div> 
                             
 

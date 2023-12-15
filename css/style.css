@@ -141,9 +141,13 @@
 
 .top .topD .Icon {
     text-align: right;
-    margin-top: -55px;
+    margin: -65px 40px 0px 0px;
     padding: 10px;
     font-size: 25px;
+}
+
+.top .topD .Icon .fa-solid{
+    margin-left: 10px;
 }
 
 /* CoNTAINER containerBox:CENT:CENT1*/
