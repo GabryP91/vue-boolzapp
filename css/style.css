@@ -123,7 +123,7 @@ body {
     right: 0;
 }
 
-.ContactUsers .ContactUser .ImgName h7{
+.ContactUsers .ContactUser .ImgName h5{
     display: inline;
 }
 
@@ -212,8 +212,6 @@ body {
 
 /* CoNTAINER containerBox:CENT:CENT1*/
 
-
-
 .Cent1 {
     background-image: url("../img-recap/ImgBackground.png");
     overflow-y: auto;
@@ -261,8 +259,7 @@ body {
 
 
 
-
-/* PARTE RESPONSIVE */
+/*-------------------------------------- PARTE RESPONSIVE--------------------------------------------- */
 /* Versione tablet-desktop in giu */
 @media screen and (max-width: 1400px) {
 

@@ -38,7 +38,7 @@
                         <div class="topS">
                             
                             <div class="ImgName">
-                                <img src="img-recap/avatar-esempi/avatar1.jpg" alt="avatarUser" class="avatar"> <h7 class="name">Odoacre</h7>
+                                <img src="img-recap/avatar-esempi/avatar1.jpg" alt="avatarUser" class="avatar"> <h5 class="name">Odoacre</h5>
                             </div>
 
                             <div class="Icon">
@@ -54,9 +54,9 @@
 
                             <div class="ImgName">
                                 <img :src="contacts[activeAvatar].avatar" alt="avatarUser" class="avatar">
-                                <h7 class="name">{{contacts[activeAvatar].name}}
+                                <h5 class="name">{{contacts[activeAvatar].name}}
                                     <br>ultimo accesso oggi alle <span class="time">12:00</span>
-                                </h7>
+                                </h5>
                             </div>
 
                             <div class="Icon">
@@ -78,7 +78,7 @@
 
                             <div class="ImgName">
                                 <i class="fa-solid fa-bell-slash"></i>
-                                <h7 class="name">Ricevi notifiche di nuovi messaggi</h7>
+                                <h5 class="name">Ricevi notifiche di nuovi messaggi</h5>
                             </div>             
                            
                         </div> 
@@ -117,10 +117,10 @@
                                     <div class="ImgName">
                                         <img :src="user.avatar" alt="Lista avatar i" class="avatar">
                                          
-                                         <h7 class="name">
+                                         <h5 class="name">
                                             {{user.name}}<span class="time">12:00</span>
                                             <br>ultimo messaggio inviato
-                                         </h7>
+                                         </h5>
                                     </div>
     
                                 </div>
@@ -159,39 +159,35 @@
                         <div class="container botton">
 
                             <!-- Form in container fluid-->
-                            <form class="container-fluid">
+                            <div class="container-fluid">
 
                                 <div class="input-group">
 
                                     <!-- Tipo input text-->
-                                    <input class="form-control " type="text" placeholder="Scrivi un messaggio" aria-label="Search">
+                                    <input class="form-control " type="text" placeholder="Scrivi un messaggio" v-model = "message"  @keyup.enter="addMessage(i)">
 
                                     <!-- Icona microfono legata all'input (necessario sistemarla in questo modo) -->
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" >
-                                            <i class="fa-solid fa-microphone"></i>
+                                            <i class="fa-solid fa-microphone" @click = "addMessage()"></i>
                                         </span>
                                     </div>
 
                                     
                                 </div>
 
-                            </form>
+                            </div>
 
                         </div>
 
                     </div>
                     
                 </div>
-                
-              
+     
     </div>
 
+           
             
-            
-  
-    </div>
-
      <!-- Link mio file Js-->
      <script src="Javascript/Jv.js"></script>
     

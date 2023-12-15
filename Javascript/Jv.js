@@ -15,6 +15,8 @@ createApp({
 
             activeMessage: 0,
 
+            message: "",
+
             contacts: [
                 {
                     name: 'Vercy',
@@ -178,6 +180,10 @@ createApp({
         changeCon(index){
         
             this.activeAvatar = index;
+        },
+
+        addMessage(index) {
+            console.log(this.contacts[this.activeAvatar]);
         }
     },
 
