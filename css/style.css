@@ -6,11 +6,16 @@
 }
 
 .container-fluid {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .fa-solid {
     color: gray;
+}
+
+body {
+    background-color: rgb(219, 219, 211);
 }
 
 
@@ -30,12 +35,14 @@
     flex-wrap: wrap;
     flex-direction: row;
     margin-top: -45px;
+    background-color: white;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 
 /* CoNTAINER containerBox:ContactUser */
 .ContactUser {
-    
     overflow-y: auto;
     height: calc(100vh - 80px);
     flex-basis: 30%;

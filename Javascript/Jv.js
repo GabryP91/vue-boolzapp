@@ -176,10 +176,8 @@ createApp({
     methods: {
         
         changeCon(index){
-            console.log(this.activeAvatar);
-
+        
             this.activeAvatar = index;
-
         }
     },
 
