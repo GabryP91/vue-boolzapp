@@ -27,6 +27,10 @@ body {
     background-color: rgb(219, 219, 211);
 }
 
+h5 {
+    display: inline-block;
+}
+
 
 /* MAIN */
 
@@ -122,11 +126,6 @@ body {
     top: 0;
     right: 0;
 }
-
-.ContactUsers .ContactUser .ImgName h5{
-    display: inline;
-}
-
 
 .ContactUsers .ContactUser .ImgName .avatar {
     width: 15%;
@@ -259,27 +258,74 @@ body {
 
 
 
+
 /*-------------------------------------- PARTE RESPONSIVE--------------------------------------------- */
 /* Versione tablet-desktop in giu */
 @media screen and (max-width: 1400px) {
+
+   
+    h5{
+        font-size: 15px;
+    }
 
     /* TOP:TOps, icone */
     .top .topS .Icon {
         margin: -55px 0px 0px 220px;
     }
+
+    .top .topD .Icon {
+        margin: -55px 40px 0px 0px;
+    }
+
     
 }
 
 @media screen and (max-width: 1200px) {
 
-    /* TOP:TOps, icone */
+    h5 {
+        font-size: 13px;
+    }
+
+    /* TOP:TopS,TopD icone */
     .top .topS .Icon {
         margin: -55px 0px 0px 170px;
     }
-    
+
+    .top .topD .Icon {
+        margin: -47px 40px 0px 0px;
+    }
+
+
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 991px) {
+
+/* CoNTAINER containerBox:ContactUsers,Allert */
+    .ContactUsers .Allert .ImgName .fa-solid{
+        font-size: 20px;
+        margin: 10px;
+        color: rgb(142, 218, 252);
+        background-color: white;
+        border-radius: 50px;
+        padding: 10px;
+    }
+
+    .ContactUsers .Allert .ImgName .name{
+        font-size: 8px;
+        vertical-align: super;
+    }
+
+/* CoNTAINER containerBox:ContactUsers,ContactUser */
+    .ContactUsers .ContactUser .ImgName .avatar {
+        width: 15%;
+        border-radius: 50px;
+        vertical-align: middle;
+        margin-bottom: 15px;
+    }
+
+    .ContactUsers .ContactUser .ImgName .name {
+        margin-left: 1px;
+    }
 
     /* TOP:TOps, icone */
     .top .topS .Icon {
