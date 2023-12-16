@@ -182,8 +182,52 @@ createApp({
             this.activeAvatar = index;
         },
 
-        addMessage(index) {
-            console.log(this.contacts[this.activeAvatar]);
+
+        //acquisisco la data corrente
+        getDate(){
+
+           let dateC  =new Date();
+
+            //restituisce l'anno corrente
+            let year = dateC.getFullYear();
+
+            //restituisce mese corrente da 0 a 11 e quindi si aggiunge 1
+            let month = dateC.getMonth()+1;
+
+            //restituisce giorno corrente
+            let day = dateC.getDate();
+
+            //restituisce ora corrente
+            let hour = dateC.getHours();
+
+            //restituisce minuti correnti
+            let minute = dateC.getMinutes();
+
+            //restituisce secondi correnti
+            let second = dateC.getSeconds();
+
+            //creo un'unica stringa concatenata con tutte le informazioni di mio interesse
+            let time = day+'/'+month+'/'+year+' '+hour+':'+minute+':'+second;
+
+            //restituisco tale stringa
+            return time;
+
+
+        },
+
+        addMessage() {
+
+            //acquisisco la data dalla funzione getDate all'interno di una variabile locale
+            let dateC = this.getDate();
+
+            //creo un'altra variabile : oggetto, con il testo scelto dall'utente
+            taskN = {date:dateC,message:this.message,status:'sent'};
+
+            //inserisco tale variabile nel mio array
+            this.contacts[this.activeAvatar].messages.push(taskN);
+
+            console.log(this.contacts[this.activeAvatar].messages);
+
         }
     },
 
@@ -209,7 +253,6 @@ createApp({
     //         });
 
     //   }
-;
   }
 
 }).mount('#app');
