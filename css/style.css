@@ -131,6 +131,7 @@ h5 {
     width: 15%;
     border-radius: 50px;
     vertical-align: middle;
+    margin-bottom: 25px;
 }
 
 .ConAvUs {
@@ -259,7 +260,8 @@ h5 {
 
 
 
-/*-------------------------------------- PARTE RESPONSIVE--------------------------------------------- */
+/*-------------------------------------- PARTE RESPONSIVE da 1440 in giu sino a 991--------------------------------------------- */
+
 /* Versione tablet-desktop in giu */
 @media screen and (max-width: 1400px) {
 
