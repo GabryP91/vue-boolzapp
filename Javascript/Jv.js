@@ -1,6 +1,3 @@
-
-
-
 //Svolgimento
 
 const { createApp } = Vue;
@@ -17,11 +14,13 @@ createApp({
 
             message: "",
 
+            searchmex: "",
+
             contacts: [
                 {
                     name: 'Vercy',
                     avatar: 'img-recap/avatar-esempi/avatar2.jpeg',
-                    visible: true,
+                    index: 0,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -58,7 +57,7 @@ createApp({
                 {
                     name: 'Jack',
                     avatar: 'img-recap/avatar-esempi/avatar5.jpg',
-                    visible: true,
+                    index: 1,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -100,7 +99,7 @@ createApp({
                 {
                     name: 'Str Lincoln',
                     avatar: 'img-recap/avatar-esempi/avatar4.jpg',
-                    visible: true,
+                    index: 2,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -127,7 +126,7 @@ createApp({
                 {
                     name: 'Olmo',
                     avatar: 'img-recap/avatar-esempi/avatar3.jpg',
-                    visible: true,
+                    index: 3,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -171,14 +170,36 @@ createApp({
                         },
                     ],
                 }
-            ]
-            
+            ],
+ 
         }
     },
+
+    //ricerca utente
+    computed: {
+
+        filteredList() {
+        
+        //quando avvio la pagina carica tutti i nomi con i vari indici poiche il tag input search è vuoto e non filtra nulla: restituisce un array con tutti i dati filtrati
+        const result = this.contacts.filter(user => {
+            
+            //console.log(user.name.toLowerCase().includes(this.searchmex.toLowerCase()));
+
+            //faccio la ricerca per nome
+            return user.name.toLowerCase().includes(this.searchmex.toLowerCase())
+
+          })
+
+        return result;
+          
+        }
+      },
+
+    //metodi
     methods: {
         
         changeCon(index){
-        
+
             this.activeAvatar = index;
         },
 
@@ -215,6 +236,7 @@ createApp({
 
         },
 
+        //aggiunta nuovo messaggio
         addMessage() {
 
             //acquisisco la data dalla funzione getDate all'interno di una variabile locale
@@ -228,7 +250,9 @@ createApp({
 
             console.log(this.contacts[this.activeAvatar].messages);
 
-        }
+        },
+
+     
     },
 
     mounted() {

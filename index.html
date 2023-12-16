@@ -87,23 +87,23 @@
                         <div class=" container-fluid shearc">
                                            
                             <!-- Form in container fluid-->
-                            <form class="container-md">
+                            <div class="container-md">
 
                                 <div class="input-group">
 
                                     <!-- Icona microfono legata all'input (necessario sistemarla in questo modo) -->
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" >
-                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                            <i class="fa-solid fa-magnifying-glass" @click ="searchUsers()"></i>
                                         </span>
                                     </div>
 
                                     <!-- Tipo input text-->
-                                    <input class="form-control " type="text" placeholder="cerca o inizia una nuova chat" aria-label="Search">
+                                    <input class="form-control " type="text" placeholder="cerca o inizia una nuova chat" aria-label="Search" v-model = "searchmex">
 
                                 </div>
 
-                            </form>
+                            </div>
 
                         </div> 
 
@@ -112,10 +112,10 @@
                             <!-- niente margini interni (evita lo scroll orizzontale) -->
                             <div class="row g-0"> 
     
-                                <div class="col-12 p-3 " v-for="(user,i) in contacts" :key="i" @click = "changeCon(i)">
+                                <div class="col-12 p-3 " v-for="user in filteredList"   @click = "changeCon(user.index)">
     
                                     <div class="ImgName">
-                                        <img :src="user.avatar" alt="Lista avatar i" class="avatar">
+                                        <img :src="user.avatar" alt="Lista avatar" class="avatar">
                                          
                                          <h5 class="name">
                                             {{user.name}}<span class="time">12:00</span>

@@ -85,6 +85,8 @@ h5 {
     padding: 10px;
 }
 
+
+/* Search */
 .ContactUsers .shearc {
     height: 60px;
     padding-top: 10px;
@@ -100,7 +102,11 @@ h5 {
     font-size: 25px;
 }
 
+.ContactUsers .shearc .fa-solid:hover {
+    color: rgb(142, 218, 252);
+}
 
+/* ContactUser */
 .ContactUsers .ContactUser {
     overflow-y: auto;
     height: calc(100vh - 200px);
@@ -141,6 +147,10 @@ h5 {
     border: 5px;
     border-radius: 30px;
     padding: 10px;
+}
+
+.none {
+    display: none;;
 }
 
 /* CoNTAINER containerBox:top */
