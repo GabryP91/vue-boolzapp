@@ -197,6 +197,10 @@ createApp({
 
     //metodi
     methods: {
+
+        returnStart() {
+            this.searchmex ='';
+        },
         
         changeCon(index){
 
