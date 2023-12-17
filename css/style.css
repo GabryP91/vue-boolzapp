@@ -236,8 +236,7 @@ h5 {
     border-radius: 30px;
     padding: 10px;
     margin-right: 70%;
-    
-
+    max-width: 250px; 
 }
 
 .boxC {
@@ -248,12 +247,19 @@ h5 {
     border-radius: 30px;
     padding: 10px;
     margin-left: 70%;
-    
+    max-width: 250px; 
 }
+
+.Cent1 h5 {
+    max-width: 250px; 
+    word-break: break-word;
+}
+
 
 .Cent1 .timeC {
     color: rgb(182, 185, 187);
     text-align: end;
+    margin-top: -15px;
     display: flow;
 }
 
@@ -288,7 +294,7 @@ h5 {
 @media screen and (max-width: 1400px) {
 
    
-    h5{
+    h5,span {
         font-size: 15px;
     }
 
@@ -306,7 +312,7 @@ h5 {
 
 @media screen and (max-width: 1200px) {
 
-    h5 {
+    h5,span {
         font-size: 13px;
     }
 
