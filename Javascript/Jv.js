@@ -248,8 +248,6 @@ createApp({
             //inserisco tale variabile nel mio array
             this.contacts[this.activeAvatar].messages.push(taskN);
 
-            console.log(this.contacts[this.activeAvatar].messages);
-
         },
 
      

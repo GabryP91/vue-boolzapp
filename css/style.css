@@ -109,7 +109,7 @@ h5 {
 /* ContactUser */
 .ContactUsers .ContactUser {
     overflow-y: auto;
-    height: calc(100vh - 200px);
+    height: calc(90vh - 200px);
     
 }
 
@@ -225,8 +225,7 @@ h5 {
 .Cent1 {
     background-image: url("../img-recap/ImgBackground.png");
     overflow-y: auto;
-    height: calc(100vh - 130px);
-    
+    height: calc(90vh - 130px); 
 }
 
 .boxU {
