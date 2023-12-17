@@ -236,6 +236,8 @@ h5 {
     border-radius: 30px;
     padding: 10px;
     margin-right: 70%;
+    
+
 }
 
 .boxC {
@@ -246,7 +248,15 @@ h5 {
     border-radius: 30px;
     padding: 10px;
     margin-left: 70%;
+    
 }
+
+.Cent1 .timeC {
+    color: rgb(182, 185, 187);
+    text-align: end;
+    display: flow;
+}
+
 
 /* CoNTAINER containerBox:CENT:CENT1:botton */
 .botton {

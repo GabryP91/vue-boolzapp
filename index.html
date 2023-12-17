@@ -112,14 +112,14 @@
                             <!-- niente margini interni (evita lo scroll orizzontale) -->
                             <div class="row g-0"> 
     
-                                <div class="col-12 p-3 " v-for="user in filteredList" @click = "changeCon(user.index)">
+                                <div class="col-12 p-3 " v-for="user in filteredList"  @click = "changeCon(user.index)">
     
                                     <div class="ImgName">
                                         <img :src="user.avatar" alt="Lista avatar" class="avatar">
                                          
                                          <h5 class="name">
-                                            {{user.name}}<span class="time">12:00</span>
-                                            <br>ultimo messaggio inviato
+                                            {{user.name}}<span class="time">{{user.messages.slice(-1)[0].date.substring(11,16)}}</span>
+                                            <br>ultimo messaggio
                                          </h5>
                                     </div>
     
@@ -142,9 +142,11 @@
 
                                     <div class="boxU" v-if ="text.status ==='sent' ">
                                         <h5>{{text.message}}</h5>
+                                        <span class="timeC">{{text.date.substring(11,16)}}</span>
                                     </div>
                                     <div class="boxC" v-else>
                                         <h5>{{text.message}}</h5>
+                                        <span class="timeC">{{text.date.substring(11,16)}}</span>
                                     </div>
 
                                 </div> 

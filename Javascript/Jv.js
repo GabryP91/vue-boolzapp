@@ -48,7 +48,7 @@ createApp({
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 16:15:22',
+                            date: '10/09/2020 16:15:22',
                             message: 'Tutto fatto come prima =)',
                             status: 'received'
                         }
@@ -90,7 +90,7 @@ createApp({
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            date: '10/11/2020 15:50:00',
                             message: 'Jack Burton, qui presente! Il vecchio Jack dice sempre… Basta adesso!',
                             status: 'received'
                         }
