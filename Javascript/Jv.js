@@ -10,8 +10,6 @@ createApp({
 
             activeAvatar: 0,
 
-            activeMessage: 0,
-
             message: "",
 
             searchmex: "",
@@ -240,8 +238,17 @@ createApp({
 
         },
 
+   
+
         //aggiunta nuovo messaggio
         addMessage() {
+
+            //controllo se il corpo del messaggio è vuoto
+            if(this.message.length === 0){
+
+                    return alert("il corpo del messaggio è vuoto");
+
+            }
 
             //acquisisco la data dalla funzione getDate all'interno di una variabile locale
             let dateC = this.getDate();
