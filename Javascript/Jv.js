@@ -234,6 +234,12 @@ createApp({
             //restituisce minuti correnti
             let minute = dateC.getMinutes();
 
+             //aggiungo zero ai minuti
+             if( 0<= minute && minute <=9){
+                
+                minute = '0'+minute;
+            }
+
             //restituisce secondi correnti
             let second = dateC.getSeconds();
 
