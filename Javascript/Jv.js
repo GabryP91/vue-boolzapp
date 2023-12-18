@@ -330,17 +330,42 @@ createApp({
             //inserisco tale variabile nel mio array
             this.contacts[this.activeAvatar].messages.push(taskN);
 
+
             this.connectApi();
 
             console.log(this.contacts[this.activeAvatar].messages);
 
+            //scroll della pagina
+            this.scrollToElement();
+            
+
         },
 
-     
+        //scroll verticale
+        scrollToElement() {
 
+            this.$nextTick(() => {
+
+                const element = document.querySelectorAll(".boxC");
+                let index = element.length +1
+                 //const el = this.contacts[this.activeAvatar].messages[this.messages-1];
+            
+                console.log(element[index]);
+                const pippo = element[element.length-1];
+            
+                if (pippo) {
+                // Use el.scrollIntoView() to instantly scroll to the element
+                pippo.scrollIntoView({ behavior: "smooth", block: "end", inline: "end" });
+                
+                }
+
+              });
+           
+          }
      
     },
 
-    mounted() {}
+    mounted() {
+    }
 
 }).mount('#app');
