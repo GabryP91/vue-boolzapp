@@ -14,6 +14,8 @@ createApp({
 
             searchmex: "",
 
+            rispMex: "",
+
             contacts: [
                 {
                     name: 'Vercy',
@@ -223,6 +225,12 @@ createApp({
             //restituisce ora corrente
             let hour = dateC.getHours();
 
+            //aggiungo zero all'ora
+            if( 0<= hour && hour <=9){
+                
+                hour = '0'+hour;
+            }
+           
             //restituisce minuti correnti
             let minute = dateC.getMinutes();
 
@@ -238,7 +246,16 @@ createApp({
 
         },
 
-   
+        connectApi(){
+            //chiamata tramite libreria axios all'Api ()
+            axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
+
+                .then((risposta) => {
+
+                    this.rispMex = risposta.data.response;
+
+           });
+        },
 
         //aggiunta nuovo messaggio
         addMessage() {
@@ -259,33 +276,17 @@ createApp({
             //inserisco tale variabile nel mio array
             this.contacts[this.activeAvatar].messages.push(taskN);
 
+            this.connectApi();
+
+            console.log(this.contacts[this.activeAvatar].messages);
+
         },
+
+     
 
      
     },
 
-    mounted() {
-
-    //   for(let i = 0; i < 10;i++){
- 
-    //      //chiamata tramite libreria axios all'Api ()
-    //      axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
-
-    //         .then((risposta) => {
-
-    //            console.log(risposta.data.response);
-
-    //            this.Arraymails.push(risposta.data.response);
-
-    //            console.log(this.Arraymails);
-
-    //            if(i== 9){
-    //                 this.complete = true;
-    //            }
-
-    //         });
-
-    //   }
-  }
+    mounted() {}
 
 }).mount('#app');
