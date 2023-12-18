@@ -263,6 +263,10 @@ h5 {
     display: flow;
 }
 
+.Cent1 .BoxImg{
+    width: 100%;
+}
+
 
 /* CoNTAINER containerBox:CENT:CENT1:botton */
 .botton {

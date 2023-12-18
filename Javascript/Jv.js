@@ -16,6 +16,8 @@ createApp({
 
             rispMex: "",
 
+            imgC: "BoxImg",
+
             contacts: [
                 {
                     name: 'Vercy',
@@ -25,32 +27,38 @@ createApp({
                         {
                             date: '10/01/2020 15:30:55',
                             message:'Hai portato a spasso il cane?',
-                            status: 'sent'
+                            status: 'sent',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Ricordati di scacciare i Burgundi e dare una mano ogni tanto agli Edui.....',
-                            status: 'sent'
+                            status: 'sent',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 16:15:22',
                             message: 'Tutto fatto!',
-                            status: 'received'
+                            status: 'received',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Fai attenzione anche ai romani',
-                            status: 'sent'
+                            status: 'sent',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Ricordati di innaffiare le piante ogni tanto.....',
-                            status: 'sent'
+                            status: 'sent',
+                            img:'',
                         },
                         {
                             date: '10/09/2020 16:02:22',
                             message: 'Tutto fatto come prima =)',
-                            status: 'received'
+                            status: 'received',
+                            img:'',
                         }
                     ],
                 },
@@ -198,6 +206,57 @@ createApp({
     //metodi
     methods: {
 
+        connectApi(){
+           
+            if(this.contacts[this.activeAvatar].index == 0){
+
+                //chiamata tramite libreria axios all'Api che genera immagini random di cani ()
+                axios.get("https://dog.ceo/api/breeds/image/random")
+
+                .then((risposta) => {
+
+                    this.rispMex = risposta.data.message;
+
+                    //acquisisco la data dalla funzione getDate all'interno di una variabile locale
+                    let dateC = this.getDate();
+
+                    //creo un'altra variabile : oggetto, con il testo scelto dall'utente
+                    taskN = {date:dateC,message:'che ne pensi?',status:'received',img:this.rispMex};
+
+                    //inserisco tale variabile nel mio array
+                    this.contacts[this.activeAvatar].messages.push(taskN);
+
+                });
+
+            }
+
+            else if(this.contacts[this.activeAvatar].index == 3){
+
+                //chiamata tramite libreria axios all'Api che genera immagini random di cani ()
+                axios.get("https://api.nationalize.io?name="+this.message)
+
+                .then((risposta) => {
+
+                    
+                    this.rispMex = "Nazionalità: "+risposta.data.country[0].country_id + " con probabilità dello :"+risposta.data.country[0].probability+"%" ;
+
+                    console.log(this.rispMex);
+
+                    //acquisisco la data dalla funzione getDate all'interno di una variabile locale
+                    let dateC = this.getDate();
+
+                    //creo un'altra variabile : oggetto, con il testo scelto dall'utente
+                    taskN = {date:dateC,message:this.rispMex,status:'received'};
+
+                    //inserisco tale variabile nel mio array
+                    this.contacts[this.activeAvatar].messages.push(taskN);
+
+                });
+
+            }
+           
+        },
+
         returnStart() {
             this.searchmex ='';
         },
@@ -250,17 +309,6 @@ createApp({
             return time;
 
 
-        },
-
-        connectApi(){
-            //chiamata tramite libreria axios all'Api ()
-            axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
-
-                .then((risposta) => {
-
-                    this.rispMex = risposta.data.response;
-
-           });
         },
 
         //aggiunta nuovo messaggio
