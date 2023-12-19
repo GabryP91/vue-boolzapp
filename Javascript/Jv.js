@@ -16,6 +16,8 @@ createApp({
 
             rispMex: "",
 
+            delmenu: "",
+
             imgC: "BoxImg",
 
             contacts: [
@@ -339,6 +341,68 @@ createApp({
             this.scrollToElement();
             
 
+        },
+
+        //cliccando su un messagio compare il menu
+        dropMenu(index){
+
+            console.log(this.contacts[this.activeAvatar].messages[index].message);
+
+            const element = document.querySelectorAll(".col-11")
+
+            for (let i= 0; i< element.length; i++){
+                
+                 //acquisisco i valore in posizione i nella pagina
+                let number =  element[i].querySelector('h5').innerHTML;
+
+                console.log(number);
+
+                if(this.contacts[this.activeAvatar].messages[index].message === number){
+
+                    console.log("ok");
+
+                    console.log(element[i].querySelector(".dropdown-menu"));
+                    
+                    //element[i].querySelector(".dropdown-menu").classList.add("active");
+
+                    this.delmenu = "active";
+                    //rimuovo messaggio in modo dinamico
+                    //this.contacts[this.activeAvatar].messages.splice(index, 1);
+                    
+                }
+            }
+
+        },
+
+        //cancellazione messaggio
+        DelMessage(index){
+
+            const element = document.querySelectorAll(".col-11")
+
+            for (let i= 0; i< element.length; i++){
+                
+                 //acquisisco i valore in posizione i nella pagina
+                let number =  element[i].querySelector('h5').innerHTML;
+
+                console.log(number);
+
+                if(this.contacts[this.activeAvatar].messages[index].message === number){
+
+                    console.log("ok");
+
+                    console.log(element[i].querySelector(".dropdown-menu"));
+                    
+                    //element[i].querySelector(".dropdown-menu").classList.remove("active");
+
+                    this.delmenu = "active";
+                   
+                    //rimuovo messaggio in modo dinamico
+                    //this.contacts[this.activeAvatar].messages.splice(index, 1);
+                    //console.log(this.contacts[this.activeAvatar].messages);
+                }
+            }
+            
+                   
         },
 
         //scroll verticale

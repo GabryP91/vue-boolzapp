@@ -141,18 +141,30 @@
 
                             <div class="row ">
                                 
-                                <div v-for="text in contacts[activeAvatar].messages" class="col-11 p-2 m-2" >
+                                <div v-for="(text,i) in contacts[activeAvatar].messages" :key="i" class="col-11 p-2 m-2" >
 
-                                    <div class="boxU" v-if ="text.status ==='sent' ">
+                                    <div class="boxU" v-if ="text.status ==='sent'" @click = "dropMenu(i)">
                                         <h5>{{text.message}}</h5>
                                         <span class="timeC">{{text.date.substring(11,16)}}</span>
+
+                                       
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2" :class="image === slides[indexImg].number ? 'active' : ''delmenu"> 
+                                            <button class="dropdown-item" type="button">Message Info</button>
+                                            <button class="dropdown-item" type="button" @click = "DelMessage(i)">Delete message</button>
+                                        </div>
                                     </div>
-                                    <div class="boxC" v-else>
+
+                                    <div class="boxC" v-else  @click = "dropMenu(i)">
                                         <h5>{{text.message}}</h5>
                                         <span class="timeC">{{text.date.substring(11,16)}}</span>
                                         <img :src="text.img" :class="imgC" alt="immagine web" v-if ="text.img">
-                                    </div>
 
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2" :class="delmenu"> 
+                                            <button class="dropdown-item" type="button">Message Info</button>
+                                            <button class="dropdown-item" type="button" @click = "DelMessage(i)">Delete message</button>
+                                        </div>
+                                    </div>
+                                    
                                 </div> 
                               
                             </div> 

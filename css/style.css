@@ -150,7 +150,7 @@ h5 {
 }
 
 .none {
-    display: none;;
+    display: none;
 }
 
 /* CoNTAINER containerBox:top */
@@ -237,6 +237,7 @@ h5 {
     padding: 10px;
     margin-right: 70%;
     max-width: 250px; 
+    position: relative;
 }
 
 .boxC {
@@ -248,6 +249,7 @@ h5 {
     padding: 10px;
     margin-left: 70%;
     max-width: 250px; 
+    position: relative;
 }
 
 .Cent1 h5 {
@@ -261,6 +263,16 @@ h5 {
     text-align: end;
     margin-top: -10px;
     display: flow;
+}
+
+.Cent1 .dropdown-menu{
+   position: absolute;
+   top: 45px;
+   left: 100px;
+}
+
+.Cent1 .active{
+    display: block;
 }
 
 .Cent1 .BoxImg{
