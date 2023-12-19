@@ -143,23 +143,23 @@
                                 
                                 <div v-for="(text,i) in contacts[activeAvatar].messages" :key="i" class="col-11 p-2 m-2" >
 
-                                    <div class="boxU" v-if ="text.status ==='sent'" @click = "dropMenu(i)">
+                                    <div class="boxU" v-if ="text.status ==='sent'" @click = "ShowdropMenu(i)">
                                         <h5>{{text.message}}</h5>
                                         <span class="timeC">{{text.date.substring(11,16)}}</span>
 
                                        
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2" :class="delmenu ? 'active' : ''"> 
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2" :class="num === i ? 'active' : ''" > 
                                             <button class="dropdown-item" type="button">Message Info</button>
                                             <button class="dropdown-item" type="button" @click = "DelMessage(i)">Delete message</button>
                                         </div>
                                     </div>
 
-                                    <div class="boxC" v-else  @click = "dropMenu(i)">
+                                    <div class="boxC" v-else  @click = "ShowdropMenu(i)">
                                         <h5>{{text.message}}</h5>
                                         <span class="timeC">{{text.date.substring(11,16)}}</span>
                                         <img :src="text.img" :class="imgC" alt="immagine web" v-if ="text.img">
 
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2" > 
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2" :class="num === i ? 'active' : ''"> 
                                             <button class="dropdown-item" type="button">Message Info</button>
                                             <button class="dropdown-item" type="button" @click = "DelMessage(i)">Delete message</button>
                                         </div>

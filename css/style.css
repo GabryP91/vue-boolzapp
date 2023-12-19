@@ -279,6 +279,9 @@ h5 {
     width: 100%;
 }
 
+.Cent1 .dropdown-menu .dropdown-item:hover {
+    background-color: rgb(241, 16, 16);
+}
 
 /* CoNTAINER containerBox:CENT:CENT1:botton */
 .botton {

@@ -16,7 +16,7 @@ createApp({
 
             rispMex: "",
 
-            delmenu: "",
+            num:'',
 
             imgC: "BoxImg",
 
@@ -72,37 +72,44 @@ createApp({
                         {
                             date: '10/01/2020 15:30:55',
                             message: 'Troppa gente, qui dentro, è stata abbattuta come mosche.',
-                            status: 'received'
+                            status: 'received',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'E cosa hai ottenuto?',
-                            status: 'received'
+                            status: 'received',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 16:15:22',
                             message: 'Dimmelo tu!',
-                            status: 'sent'
+                            status: 'sent',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Niente, e subito anche.',
-                            status: 'received'
+                            status: 'received',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Aahhh. Lo sai cosa dice il vecchio Jack Burton in situazioni come questa?',
-                            status: 'received'
+                            status: 'received',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 16:15:22',
                             message: 'Chi?',
-                            status: 'sent'
+                            status: 'sent',
+                            img:'',
                         },
                         {
                             date: '10/11/2020 15:50:00',
                             message: 'Jack Burton, qui presente! Il vecchio Jack dice sempre… Basta adesso!',
-                            status: 'received'
+                            status: 'received',
+                            img:'',
                         }
                     ],
                 },
@@ -114,22 +121,26 @@ createApp({
                         {
                             date: '10/01/2020 15:30:55',
                             message: 'Davvero volete abbandonare questo film? Ma che razza impossibile!!',
-                            status: 'sent'
+                            status: 'sent',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'A chi razza impossibile?',
-                            status: 'received'
+                            status: 'received',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Nella mia fattoria coltivo piombo!',
-                            status: 'received'
+                            status: 'received',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Io non leggo il copione, il copione legge me!',
-                            status: 'received'
+                            status: 'received',
+                            img:'',
                         },
                     ],
                 },
@@ -141,42 +152,50 @@ createApp({
                         {
                             date: '10/01/2020 15:30:55',
                             message: 'tua...tu tuaa... patatina mia',
-                            status: 'received'
+                            status: 'received',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: '(coro)shattuia',
-                            status: 'sent'
+                            status: 'sent',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'non titillare la mia fantasia',
-                            status: 'received'
+                            status: 'received',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Allora tu',
-                            status: 'received'
+                            status: 'received',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: '(coro)tu tua',
-                            status: 'sent'
+                            status: 'sent',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'rucolina mia la notte è buia, no, non andare via.',
-                            status: 'received'
+                            status: 'received',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: "Com'è bello il nostro amore, senti come sale,è bello solo se ci sei tuaaa, sotto questa luna dimmi cosa pensi di me.",
-                            status: 'received'
+                            status: 'received',
+                            img:'',
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Che sei una merda, io credo veramente tu sei merda.',
-                            status: 'sent'
+                            status: 'sent',
+                            img:'',
                         },
                     ],
                 }
@@ -319,7 +338,7 @@ createApp({
             //controllo se il corpo del messaggio è vuoto
             if(this.message.length === 0){
 
-                    return alert("il corpo del messaggio è vuoto");
+                return alert("il corpo del messaggio è vuoto");
 
             }
 
@@ -335,8 +354,6 @@ createApp({
 
             this.connectApi();
 
-            console.log(this.contacts[this.activeAvatar].messages);
-
             //scroll della pagina
             this.scrollToElement();
             
@@ -344,65 +361,29 @@ createApp({
         },
 
         //cliccando su un messagio compare il menu
-        dropMenu(index){
+        ShowdropMenu(index){
+          
+            //attivo menu se il valore è null
+            if(this.num === ''){
 
-            console.log(this.contacts[this.activeAvatar].messages[index].message);
+                this.num = index;
 
-            const element = document.querySelectorAll(".col-11")
-
-            for (let i= 0; i< element.length; i++){
-                
-                 //acquisisco i valore in posizione i nella pagina
-                let number =  element[i].querySelector('h5').innerHTML;
-
-                console.log(number);
-
-                if(this.contacts[this.activeAvatar].messages[index].message === number){
-
-                    console.log("ok");
-
-                    console.log(element[i].querySelector(".dropdown-menu"));
-                    
-                    //element[i].querySelector(".dropdown-menu").classList.add("active");
-
-                    this.delmenu = "active";
-                    //rimuovo messaggio in modo dinamico
-                    //this.contacts[this.activeAvatar].messages.splice(index, 1);
-                    
-                }
             }
+            //altrimenti
+            else{
 
-        },
-
-        //cancellazione messaggio
-        DelMessage(index){
-
-            const element = document.querySelectorAll(".col-11")
-
-            for (let i= 0; i< element.length; i++){
-                
-                 //acquisisco i valore in posizione i nella pagina
-                let number =  element[i].querySelector('h5').innerHTML;
-
-                console.log(number);
-
-                if(this.contacts[this.activeAvatar].messages[index].message === number){
-
-                    console.log("ok");
-
-                    console.log(element[i].querySelector(".dropdown-menu"));
-                    
-                    //element[i].querySelector(".dropdown-menu").classList.remove("active");
-
-                    this.delmenu = "active";
-                   
-                    //rimuovo messaggio in modo dinamico
-                    //this.contacts[this.activeAvatar].messages.splice(index, 1);
-                    //console.log(this.contacts[this.activeAvatar].messages);
-                }
+                this.num = '';
             }
             
-                   
+        },
+
+
+        //cancellazione effettiva del messaggio
+        DelMessage(index){
+
+            //rimuovo messaggio in modo dinamico
+            this.contacts[this.activeAvatar].messages.splice(index, 1);
+
         },
 
         //scroll verticale
