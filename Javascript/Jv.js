@@ -346,12 +346,12 @@ createApp({
             let dateC = this.getDate();
 
             //creo un'altra variabile : oggetto, con il testo scelto dall'utente
-            taskN = {date:dateC,message:this.message,status:'sent'};
+            taskN = {date:dateC,message:this.message,status:'sent',img:''};
 
             //inserisco tale variabile nel mio array
             this.contacts[this.activeAvatar].messages.push(taskN);
 
-
+            //richiama funzipon per connessione api
             this.connectApi();
 
             //scroll della pagina

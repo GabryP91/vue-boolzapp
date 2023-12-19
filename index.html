@@ -147,7 +147,7 @@
                                         <h5>{{text.message}}</h5>
                                         <span class="timeC">{{text.date.substring(11,16)}}</span>
 
-                                       
+                                       <!-- dropdown menu -->
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2" :class="num === i ? 'active' : ''" > 
                                             <button class="dropdown-item" type="button">Message Info</button>
                                             <button class="dropdown-item" type="button" @click = "DelMessage(i)">Delete message</button>
@@ -158,7 +158,7 @@
                                         <h5>{{text.message}}</h5>
                                         <span class="timeC">{{text.date.substring(11,16)}}</span>
                                         <img :src="text.img" :class="imgC" alt="immagine web" v-if ="text.img">
-
+                                        <!-- dropdown menu -->
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2" :class="num === i ? 'active' : ''"> 
                                             <button class="dropdown-item" type="button">Message Info</button>
                                             <button class="dropdown-item" type="button" @click = "DelMessage(i)">Delete message</button>
