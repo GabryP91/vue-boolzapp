@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Link css Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <!-- Link font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- richiamo VueJS 3.2 -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <!-- Link libreria axios -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"
+        integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
     <!-- Link css style-->
@@ -23,190 +29,206 @@
 
     <title>Vue-boolzapp-ex5</title>
 </head>
+
 <body>
 
     <div id="app">
 
-            <!--container superiore  -->
-            <div class=" header"></div>
+        <!-- Splash Screen inizia qui  -->
+        <div class="splash">
+            <h1 class="splash-header">BENVENUTO IN BOOLZAPP!!</h1>
+        </div>
+        <!-- Splash Screen finisce qui  -->
 
-       
-                <!-- Container Bootstrap tot -->
-                <div class="container containerBox">
+        <!--container superiore  -->
+        <div class=" header"></div>
 
-                    <!-- Container Bootstrap top -->
-                    <div class="container-fluid top">
 
-                        <!-- Container top Sinistro -->
-                        <div class="topS">
-                            
-                            <div class="ImgName">
-                                <img src="img-recap/avatar-esempi/avatar1.jpg" alt="avatarUser" class="avatar"> <h5 class="name">Odoacre</h5>
+        <!-- Container Bootstrap tot -->
+        <div class="container containerBox">
+
+            <!-- Container Bootstrap top -->
+            <div class="container-fluid top">
+
+                <!-- Container top Sinistro -->
+                <div class="topS">
+
+                    <div class="ImgName">
+                        <img src="img-recap/avatar-esempi/avatar1.jpg" alt="avatarUser" class="avatar">
+                        <h5 class="name">Odoacre</h5>
+                    </div>
+
+                    <div class="Icon">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+
+                </div>
+
+                <!-- Container top Destro -->
+                <div class="topD">
+
+                    <div class="ImgName">
+                        <img :src="contacts[activeAvatar].avatar" alt="avatarUser" class="avatar">
+                        <h5 class="name">{{contacts[activeAvatar].name}}
+                            <br>ultimo accesso oggi alle <span class="time">12:00</span>
+                        </h5>
+                    </div>
+
+                    <div class="Icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <!-- Container lista contatti utente Bootstrap (ContactUser + sezione allert + sezione tasto search)  -->
+            <div class="container-fluid ContactUsers">
+
+                <!--Chat in alto a sinistra(Allert)-->
+                <div class=" container-fluid Allert">
+
+                    <div class="ImgName">
+                        <i class="fa-solid fa-bell-slash"></i>
+                        <h5 class="name">Ricevi notifiche di nuovi messaggi</h5>
+                    </div>
+
+                </div>
+
+                <!--Chat in alto a sinistra(ricerca)-->
+                <div class=" container-fluid shearc">
+
+                    <!-- Form in container fluid-->
+                    <div class="container-md">
+
+                        <div class="input-group">
+
+                            <!-- Icona microfono legata all'input (necessario sistemarla in questo modo) -->
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-rotate-left" @click="returnStart()"></i>
+                                </span>
                             </div>
 
-                            <div class="Icon">
-                                <i class="fa-solid fa-circle-notch"></i>
-                                <i class="fa-solid fa-message"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
-                            </div>
+                            <!-- Tipo input text-->
+                            <input class="form-control " type="text" placeholder="cerca o inizia una nuova chat"
+                                aria-label="Search" v-model="searchmex">
 
                         </div>
 
-                        <!-- Container top Destro -->
-                        <div class="topD">
+                    </div>
+
+                </div>
+
+                <div class="container-fluid ContactUser">
+
+                    <!-- niente margini interni (evita lo scroll orizzontale) -->
+                    <div class="row g-0">
+
+                        <div class="col-12 p-3 " v-for="user in filteredList" @click="changeCon(user.index)">
 
                             <div class="ImgName">
-                                <img :src="contacts[activeAvatar].avatar" alt="avatarUser" class="avatar">
-                                <h5 class="name">{{contacts[activeAvatar].name}}
-                                    <br>ultimo accesso oggi alle <span class="time">12:00</span>
+                                <img :src="user.avatar" alt="Lista avatar" class="avatar">
+
+                                <h5 class="name">
+                                    {{user.name}}<span
+                                        class="time">{{user.messages.slice(-1)[0].date.substring(11,16)}}</span>
+                                    <br>ultimo messaggio
                                 </h5>
                             </div>
 
-                            <div class="Icon">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <i class="fa-solid fa-paperclip"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
-                            </div>
-
-                            
                         </div>
 
                     </div>
 
-                    <!-- Container lista contatti utente Bootstrap (ContactUser + sezione allert + sezione tasto search)  -->
-                    <div class="container-fluid ContactUsers">
-
-                        <!--Chat in alto a sinistra(Allert)-->
-                        <div class=" container-fluid Allert">
-
-                            <div class="ImgName">
-                                <i class="fa-solid fa-bell-slash"></i>
-                                <h5 class="name">Ricevi notifiche di nuovi messaggi</h5>
-                            </div>             
-                           
-                        </div> 
-
-                        <!--Chat in alto a sinistra(ricerca)-->
-                        <div class=" container-fluid shearc">
-                                           
-                            <!-- Form in container fluid-->
-                            <div class="container-md">
-
-                                <div class="input-group">
-
-                                    <!-- Icona microfono legata all'input (necessario sistemarla in questo modo) -->
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" >
-                                            <i class="fa-solid fa-rotate-left" @click ="returnStart()"></i>
-                                        </span>
-                                    </div>
-
-                                    <!-- Tipo input text-->
-                                    <input class="form-control " type="text" placeholder="cerca o inizia una nuova chat" aria-label="Search" v-model = "searchmex">
-
-                                </div>
-
-                            </div>
-
-                        </div> 
-
-                        <div class="container-fluid ContactUser">
-
-                            <!-- niente margini interni (evita lo scroll orizzontale) -->
-                            <div class="row g-0"> 
-    
-                                <div class="col-12 p-3 " v-for="user in filteredList"  @click = "changeCon(user.index)">
-    
-                                    <div class="ImgName">
-                                        <img :src="user.avatar" alt="Lista avatar" class="avatar">
-                                         
-                                         <h5 class="name">
-                                            {{user.name}}<span class="time">{{user.messages.slice(-1)[0].date.substring(11,16)}}</span>
-                                            <br>ultimo messaggio
-                                         </h5>
-                                    </div>
-    
-                                </div>
-                                
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Container Bootstrap Centrale  -->
-                    <div class="container Cent">
-
-                        <!-- Container Bootstrap Sub-Centrale  -->
-                        <div class="container Cent1">
-
-                            <div class="row ">
-                                
-                                <div v-for="(text,i) in contacts[activeAvatar].messages" :key="i" class="col-11 p-2 m-2" >
-
-                                    <div class="boxU" v-if ="text.status ==='sent'" @click = "ShowdropMenu(i)">
-                                        <h5>{{text.message}}</h5>
-                                        <span class="timeC">{{text.date.substring(11,16)}}</span>
-
-                                       <!-- dropdown menu -->
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2" :class="num === i ? 'active' : ''" > 
-                                            <button class="dropdown-item" type="button">Message Info</button>
-                                            <button class="dropdown-item" type="button" @click = "DelMessage(i)">Delete message</button>
-                                        </div>
-                                    </div>
-
-                                    <div class="boxC" v-else  @click = "ShowdropMenu(i)">
-                                        <h5>{{text.message}}</h5>
-                                        <span class="timeC">{{text.date.substring(11,16)}}</span>
-                                        <img :src="text.img" :class="imgC" alt="immagine web" v-if ="text.img">
-                                        <!-- dropdown menu -->
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2" :class="num === i ? 'active' : ''"> 
-                                            <button class="dropdown-item" type="button">Message Info</button>
-                                            <button class="dropdown-item" type="button" @click = "DelMessage(i)">Delete message</button>
-                                        </div>
-                                    </div>
-                                    
-                                </div> 
-                              
-                            </div> 
-                            
-
-                        </div>
-
-                        <!-- Container verticale Bootstrap bot  -->
-                        <div class="container botton">
-
-                            <!-- Form in container fluid-->
-                            <div class="container-fluid">
-
-                                <div class="input-group">
-
-                                    <!-- Tipo input text-->
-                                    <input class="form-control " type="text" placeholder="Scrivi un messaggio" v-model = "message"  @keyup.enter="addMessage()">
-
-                                    <!-- Icona microfono legata all'input (necessario sistemarla in questo modo) -->
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" >
-                                            <i class="fa-solid fa-microphone" @click = "addMessage()"></i>
-                                        </span>
-                                    </div>
-
-                                    
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                    
                 </div>
-     
+            </div>
+
+            <!-- Container Bootstrap Centrale  -->
+            <div class="container Cent">
+
+                <!-- Container Bootstrap Sub-Centrale  -->
+                <div class="container Cent1">
+
+                    <div class="row ">
+
+                        <div v-for="(text,i) in contacts[activeAvatar].messages" :key="i" class="col-11 p-2 m-2">
+
+                            <div class="boxU" v-if="text.status ==='sent'" @click="ShowdropMenu(i)">
+                                <h5>{{text.message}}</h5>
+                                <span class="timeC">{{text.date.substring(11,16)}}</span>
+
+                                <!-- dropdown menu -->
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2"
+                                    :class="num === i ? 'active' : ''">
+                                    <button class="dropdown-item" type="button">Message Info</button>
+                                    <button class="dropdown-item" type="button" @click="DelMessage(i)">Delete
+                                        message</button>
+                                </div>
+                            </div>
+
+                            <div class="boxC" v-else @click="ShowdropMenu(i)">
+                                <h5>{{text.message}}</h5>
+                                <span class="timeC">{{text.date.substring(11,16)}}</span>
+                                <img :src="text.img" :class="imgC" alt="immagine web" v-if="text.img">
+                                <!-- dropdown menu -->
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2"
+                                    :class="num === i ? 'active' : ''">
+                                    <button class="dropdown-item" type="button">Message Info</button>
+                                    <button class="dropdown-item" type="button" @click="DelMessage(i)">Delete
+                                        message</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <!-- Container verticale Bootstrap bot  -->
+                <div class="container botton">
+
+                    <!-- Form in container fluid-->
+                    <div class="container-fluid">
+
+                        <div class="input-group">
+
+                            <!-- Tipo input text-->
+                            <input class="form-control " type="text" placeholder="Scrivi un messaggio" v-model="message"
+                                @keyup.enter="addMessage()">
+
+                            <!-- Icona microfono legata all'input (necessario sistemarla in questo modo) -->
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-microphone" @click="addMessage()"></i>
+                                </span>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
-           
-            
-     <!-- Link mio file Js-->
-     <script src="Javascript/Jv.js"></script>
-    
+
+
+    <!-- Link mio file Js-->
+    <script src="Javascript/Jv.js"></script>
+
 </body>
+
 </html>

@@ -276,6 +276,16 @@ createApp({
 
         },
 
+        //gestisco la splash page
+        Spasch() {
+
+            var splashScreen = document.querySelector('.splash');
+
+            setTimeout(() => {
+                splashScreen.classList.add('hidden')
+            }, 1700)
+        },
+
         returnStart() {
             this.searchmex = '';
         },
@@ -403,6 +413,8 @@ createApp({
     },
 
     mounted() {
+
+        this.Spasch();
     }
 
 }).mount('#app');
