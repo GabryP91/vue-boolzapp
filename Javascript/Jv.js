@@ -261,8 +261,6 @@ createApp({
 
                         this.rispMex = "Nazionalità: " + risposta.data.country[0].country_id + " con probabilità dello :" + risposta.data.country[0].probability + "%";
 
-                        console.log(this.rispMex);
-
                         //acquisisco la data dalla funzione getDate all'interno di una variabile locale
                         let dateC = this.getDate();
 
@@ -355,7 +353,7 @@ createApp({
             this.connectApi();
 
             //avvio lo sroll della pagina dopo tot tempo per dare modo di caricare in pagina i nuovi dati
-            setTimeout(this.scrollToElement, 200);
+            setTimeout(this.scrollToElement, 250);
 
 
         },
@@ -393,8 +391,6 @@ createApp({
 
             //acquisisco l'ultimo messaggio in pagina
             const prova = element[element.length - 1];
-
-            console.log(prova);
 
             if (prova) {
 
